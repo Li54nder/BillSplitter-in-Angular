@@ -1,0 +1,21 @@
+<div class="page">
+  <div class="content">
+    <h3>Pay Bill</h3>
+    <form [formGroup]="personForm" class="person-form">
+      <mat-form-field>
+        <mat-label>Add person</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+
+      <button mat-flat-button (click)="addPerson()" [disabled]="personForm.invalid"> Add </button>
+    </form>
+
+    <mat-divider></mat-divider>
+
+    <app-item-form *ngFor="let item of items" [people]="people" [item]="item" (updatedItem)="updateItems($event)"></app-item-form>
+
+    <button mat-flat-button color="primary" (click)="addItem()">Add item</button>
+
+    <app-table [items]="items"></app-table>
+  </div>
+</div>

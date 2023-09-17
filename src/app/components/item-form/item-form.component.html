@@ -1,0 +1,16 @@
+
+<form [formGroup]="form" class="person-form">
+  <mat-form-field>
+    <mat-label>Price</mat-label>
+    <input matInput type="number" formControlName="price">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>People</mat-label>
+    <mat-select formControlName="people" multiple>
+      <mat-option *ngFor="let p of people" [value]="p.name" >
+        {{p.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+
