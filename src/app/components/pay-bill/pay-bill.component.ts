@@ -10,7 +10,7 @@ import { People } from 'src/app/models/people';
 })
 export class PayBillComponent implements OnInit {
   personForm!: FormGroup;
-  people: People[] = [ {name: "Dovla"} ];
+  people: People[] = [];
   items: Item[] = [];
 
   constructor(
@@ -41,16 +41,12 @@ export class PayBillComponent implements OnInit {
   }
 
   updateItems(item: Item) {
-    console.log(this.items);
     this.items = this.items.map(i => {
       if(i.id == item.id) {
         return item;
       }
       return i;
     })
-    console.log(this.items);
-
-
   }
 
 }
